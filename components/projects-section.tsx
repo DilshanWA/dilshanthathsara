@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -26,9 +29,45 @@ const projects = [
     live: "https://taskmanager-demo.vercel.app",
     featured: true,
   },
+  {
+    id: 3,
+    title: "Weather Forecast App",
+    description:
+      "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics using modern APIs.",
+    image: "/weather-app-interface.png",
+    technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
+    github: "https://github.com/dilshan-madusanka/weather-app",
+    live: "https://weather-forecast-demo.vercel.app",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "Social Media Dashboard",
+    description:
+      "A comprehensive social media management dashboard with analytics, post scheduling, and multi-platform integration capabilities.",
+    image: "/social-media-dashboard.png",
+    technologies: ["Vue.js", "Express.js", "Redis", "Social APIs"],
+    github: "https://github.com/dilshan-madusanka/social-dashboard",
+    live: "https://social-dashboard-demo.vercel.app",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Learning Management System",
+    description:
+      "An educational platform with course management, student progress tracking, and interactive learning modules for online education.",
+    image: "/learning-management-system.png",
+    technologies: ["Next.js", "Supabase", "Stripe", "Video.js"],
+    github: "https://github.com/dilshan-madusanka/lms-platform",
+    live: "https://lms-demo.vercel.app",
+    featured: false,
+  },
 ]
 
 export function ProjectsSection() {
+  const [showAll, setShowAll] = useState(false)
+  const displayedProjects = showAll ? projects : projects.filter((project) => project.featured)
+
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-6xl mx-auto">
@@ -40,7 +79,7 @@ export function ProjectsSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <Card
               key={project.id}
               className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -93,9 +132,11 @@ export function ProjectsSection() {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg" className="group bg-transparent">
-            View All Projects
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Button variant="outline" size="lg" className="group bg-transparent" onClick={() => setShowAll(!showAll)}>
+            {showAll ? "Show Less" : "View All Projects"}
+            <ArrowRight
+              className={`ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 ${showAll ? "rotate-180" : ""}`}
+            />
           </Button>
         </div>
       </div>
