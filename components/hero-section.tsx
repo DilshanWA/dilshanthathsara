@@ -6,7 +6,7 @@ import { Download, ExternalLink, Terminal, Code2, Cpu, Database } from "lucide-r
 
 const codeSnippets = [
   "const developer = new SoftwareEngineer();",
-  "developer.skills = ['React', 'Node.js', 'Python'];",
+  "developer.skills = ['React', 'Node.js', 'Express.js'];",
   "developer.passion = 'Building innovative solutions';",
   "developer.status = 'Ready to create amazing things';",
   "// Always learning, always growing",
