@@ -64,9 +64,8 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {currentYear} Dilshan Thathsara Madusanka. All rights reserved.
           </p>
-          <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+          <div className="flex items-center space-x-0 text-sm text-muted-foreground">
             <span>Built with</span>
-            <Heart className="h-4 w-4 text-red-500 fill-current" />
             <span>using Next.js & Tailwind CSS</span>
           </div>
         </div>
