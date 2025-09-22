@@ -211,6 +211,8 @@ export function HeroSection() {
                 <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform " />
                 Download CV
               </Button>
+
+              <a href = "https://www.linkedin.com/in/dilshan-madusanka/" target="_blank">
               <Button
                 variant="outline"
                 size="lg"
@@ -219,6 +221,7 @@ export function HeroSection() {
                 <ExternalLink className="mr-2 h-5 w-5" />
                 View LinkedIn
               </Button>
+              </a>
             </div>
 
             <div
