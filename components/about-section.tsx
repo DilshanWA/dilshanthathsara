@@ -17,7 +17,7 @@ export function AboutSection() {
         <div className="relative w-full max-w-md mx-auto">
           <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px] sm:h-[550px] md:h-[600px] lg:h-[500px]">
             <img
-              src="/professional-headshot-of-young-software-engineering-student.png"
+              src="/image03.png"
               alt="Dilshan Thathsara Madusanka - About"
               className="w-full h-full object-cover"
             />
