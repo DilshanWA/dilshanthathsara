@@ -20,7 +20,7 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const response = await axios("/api/contact", {
+      const response = await axios("https://www.dilshanthathsara.me//api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
