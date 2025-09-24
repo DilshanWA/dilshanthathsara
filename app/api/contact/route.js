@@ -8,7 +8,12 @@ export async function POST(req) {
     const { name, email, message } = data;
 
     // Save to Firebase
-    await db.collection("contacts").add({ name, email, message, createdAt: new Date() });
+    await db.collection("contacts").add({
+      name,
+      email,
+      message,
+      createdAt: new Date(),
+    });
 
     // Send email notification
     await transporter.sendMail({

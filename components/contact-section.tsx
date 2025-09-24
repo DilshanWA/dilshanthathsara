@@ -23,29 +23,29 @@ export function ContactSection() {
 
 
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  try {
-    const response = await axios.post("/api/contact", formData, {
-      headers: { "Content-Type": "application/json" },
-    });
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus(null);
 
-    if (response.status === 200) {
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      setStatus('error');
+    try {
+      const response = await axios.post("/api/contact", formData, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.status === 200) {
+        setFormData({ name: "", email: "", message: "" });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      setModalOpen(true); // Show modal regardless of success/error
     }
-    setIsSubmitting(false);
-    setStatus('success');
-  } catch (error) {
-     setStatus('error');
-    setIsSubmitting(false);
-  }finally {
-    setModalOpen(true);
-  }
-
-};
-
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
