@@ -1,14 +1,15 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import axios from "axios"
 import { Textarea } from "@/components/ui/textarea"
+import { NotificationModal } from "@/components/notificationModal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react"
+import { se } from "date-fns/locale"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,30 +17,35 @@ export function ContactSection() {
     email: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<'success' | 'error' | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    try {
-      const response = await axios("https://www.dilshanthathsara.me//api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: formData,
-      })
 
-      if (response.status === 200) {
-        alert("Form submitted successfully!")
-        setFormData({ name: "", email: "", message: "" })
-      } else {
-        alert("Failed to submit form. Please try again later.")
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      alert("An unexpected error occurred. Please try again later.")
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  try {
+    const response = await axios.post("/api/contact", formData, {
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.status === 200) {
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setStatus('error');
     }
-
+    setIsSubmitting(false);
+    setStatus('success');
+  } catch (error) {
+     setStatus('error');
+    setIsSubmitting(false);
+  }finally {
+    setModalOpen(true);
   }
+
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -115,9 +121,19 @@ export function ContactSection() {
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" />
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
+              <NotificationModal
+                open={modalOpen}
+                onClose={() => setModalOpen(false)}
+                type={status === 'success' ? 'success' : 'error'}
+                message={
+                  status === 'success'
+                    ? 'Your form has been submitted successfully!'
+                    : 'Something went wrong. Please try again.'
+                }
+              />
             </CardContent>
           </Card>
 
@@ -163,6 +179,8 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
+
+
 
             {/* S
             <div>
