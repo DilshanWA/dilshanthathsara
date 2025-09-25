@@ -268,7 +268,7 @@ export function HeroSection() {
 
             <div className="grid grid-cols-2 gap-4 fade-in-up" style={{ animationDelay: "0.8s" }}>
               <div className="bg-muted/50 p-4 rounded-lg border border-primary/20 backdrop-blur-sm">
-                <div className="text-primary text-2xl font-bold">50+</div>
+                <div className="text-primary text-2xl font-bold">10+</div>
                 <div className="text-muted-foreground text-sm">Projects Completed</div>
               </div>
               <div className="bg-muted/50 p-4 rounded-lg border border-primary/20 backdrop-blur-sm">
