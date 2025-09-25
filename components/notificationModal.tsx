@@ -22,8 +22,8 @@ export function NotificationModal({ open, onClose, type, message }: Notification
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
       <div
         className={cn(
-          'rounded-xl p-6 text-center shadow-lg max-w-sm w-full flex flex-col items-center gap-4 transform scale-100 animate-in',
-          'bg-gray-900 border',
+          'rounded-md p-6 text-center shadow-lg max-w-sm w-full flex flex-col items-center gap-4 transform scale-100 animate-in',
+          'bg-gray-900',
           type === 'success' ? 'border-green-500' : 'border-red-500'
         )}
       >
@@ -35,7 +35,7 @@ export function NotificationModal({ open, onClose, type, message }: Notification
         <button
           onClick={onClose}
           className={cn(
-            'mt-2 rounded-md px-5 py-1 font-medium shadow hover:shadow-md transition-colors',
+            'mt-2 rounded-sm px-4 py-0.5 font-medium shadow hover:shadow-md transition-colors',
             type === 'success'
               ? 'bg-green-500 text-gray-900 hover:bg-green-600'
               : 'bg-red-500 text-gray-900 hover:bg-red-600'

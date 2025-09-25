@@ -218,7 +218,7 @@ export function HeroSection() {
                   size="lg"
                   className="border-primary cursor-pointer text-primary hover:bg-primary/10 bg-transparent"
                 >
-                  <ExternalLink className="mr-2 h-5 w-5" />
+                  <ExternalLink className="mr-2 h-5 w-5 "  />
                   View LinkedIn
                 </Button>
               </a>
