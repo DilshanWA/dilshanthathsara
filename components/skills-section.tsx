@@ -57,8 +57,8 @@ const getLevelColor = (level: string) => {
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black-to-br from-background via-muted to-secondary">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-balance">Skills & Technologies</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">

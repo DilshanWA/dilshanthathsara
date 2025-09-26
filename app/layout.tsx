@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     "LinkedIn",
     "Resume",
   ],
-  colorScheme: "dark light",
   creator: "Dilshan Thathsara Madusanka",
   openGraph: {
     title: "Dilshan Thathsara Madusanka - Portfolio",

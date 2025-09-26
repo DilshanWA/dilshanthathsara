@@ -5,12 +5,13 @@ import { transporter } from "@/lib/nodemailer";
 export async function POST(req) {
   try {
     const data = await req.json();
-    const { name, email, message } = data;
+    const { name, email, message, subject } = data;
 
     // Save to Firebase
     await db.collection("contacts").add({
       name,
       email,
+      subject,
       message,
       createdAt: new Date(),
     });
@@ -19,7 +20,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `"Portfolio Contact" <dilshanthathsara.me>`,
       to: process.env.SMTP_USER,
-      subject: "New Contact Message",
+      subject: data.subject || "New Contact Message",
       html: `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         <div style="max-width: 600px; margin: auto; border: 1px solid #e2e2e2; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">

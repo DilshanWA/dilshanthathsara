@@ -9,43 +9,42 @@ import { Textarea } from "@/components/ui/textarea"
 import { NotificationModal } from "@/components/notificationModal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react"
-import { se } from "date-fns/locale"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState<'success' | 'error' | null>(null);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<"success" | "error" | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
-
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setStatus(null);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setStatus(null)
 
     try {
       const response = await axios.post("/api/contact", formData, {
         headers: { "Content-Type": "application/json" },
-      });
+      })
 
       if (response.status === 200) {
-        setFormData({ name: "", email: "", message: "" });
-        setStatus("success");
+        setFormData({ name: "", email: "", message: "", subject: "" })
+        setStatus("success")
       } else {
-        setStatus("error");
+        setStatus("error")
       }
     } catch (error) {
-      console.error(error);
-      setStatus("error");
+      console.error(error)
+      setStatus("error")
     } finally {
-      setIsSubmitting(false);
-      setModalOpen(true); // Show modal regardless of success/error
+      setIsSubmitting(false)
+      setModalOpen(true) // Show modal regardless of success/error
     }
-  };
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -68,33 +67,49 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Full Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your full name"
-                    required
-                    className="bg-input border-border text-foreground placeholder:text-muted-foreground"
-                  />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      Full Name
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your full name"
+                      required
+                      className="bg-input border-border text-foreground placeholder:text-muted-foreground"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Email Address
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your.email@example.com"
+                      required
+                      className="bg-input border-border text-foreground placeholder:text-muted-foreground"
+                    />
+                  </div>
                 </div>
-
+                
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    Subject
                   </label>
                   <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
-                    placeholder="your.email@example.com"
+                    placeholder="Subject"
                     required
                     className="bg-input border-border text-foreground placeholder:text-muted-foreground"
                   />
@@ -127,11 +142,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               <NotificationModal
                 open={modalOpen}
                 onClose={() => setModalOpen(false)}
-                type={status === 'success' ? 'success' : 'error'}
+                type={status === "success" ? "success" : "error"}
                 message={
-                  status === 'success'
-                    ? 'Your form has been submitted successfully!'
-                    : 'Something went wrong. Please try again.'
+                  status === "success"
+                    ? "Your form has been submitted successfully!"
+                    : "Something went wrong. Please try again."
                 }
               />
             </CardContent>
@@ -180,9 +195,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </div>
             </div>
 
-
-
-            {/* S
+            {/* Social Links */}
+            {/*
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-4">Follow Me</h4>
               <div className="flex gap-4">
@@ -212,8 +226,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 </a>
               </div>
             </div>
-             */}
-            
+            */}
           </div>
         </div>
       </div>

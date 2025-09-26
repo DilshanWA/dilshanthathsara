@@ -12,6 +12,8 @@ const codeSnippets = [
   "// Always learning, always growing",
 ]
 
+
+
 const techIcons = [
   { icon: Code2, label: "Frontend", delay: "0s" },
   { icon: Database, label: "Backend", delay: "0.5s" },
@@ -174,15 +176,13 @@ export function HeroSection() {
       id="home"
       className="min-h-screen flex items-center relative overflow-hidden bg-black-to-br from-background via-muted to-secondary"
     >
-      <MatrixRain />
-      <FloatingTechIcons />
-
-      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <FloatingTechIcons/>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           {/* Left Side - Terminal/Code Section */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
-              <div className="text-primary font-mono text-lg fade-in-up">Hello, I'm</div>
+              <div className="text-foreground font-mono text-lg fade-in-up">Hello, I'm</div>
 
               <h1
                 className="text-5xl lg:text-7xl font-bold text-foreground fade-in-up"
@@ -265,17 +265,6 @@ export function HeroSection() {
             <div className="text-primary font-mono text-sm mb-4 fade-in-up">{"//"} Welcome to my digital workspace</div>
 
             <TerminalWindow />
-
-            <div className="grid grid-cols-2 gap-4 fade-in-up" style={{ animationDelay: "0.8s" }}>
-              <div className="bg-muted/50 p-4 rounded-lg border border-primary/20 backdrop-blur-sm">
-                <div className="text-primary text-2xl font-bold">50+</div>
-                <div className="text-muted-foreground text-sm">Projects Completed</div>
-              </div>
-              <div className="bg-muted/50 p-4 rounded-lg border border-primary/20 backdrop-blur-sm">
-                <div className="text-primary text-2xl font-bold">3+</div>
-                <div className="text-muted-foreground text-sm">Years Learning</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

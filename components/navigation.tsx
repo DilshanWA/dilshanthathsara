@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X, Home, User, Code, GraduationCap, Briefcase, Mail } from "lucide-react"
+import { Github, Instagram, Facebook } from "lucide-react"
 
 const navItems = [
   { id: "home", label: "Home", icon: Home },
@@ -48,16 +49,32 @@ export function Navigation() {
     <>
       {/* Top Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
+            {/* Brand */}
             <div className="flex items-center gap-3">
-            <h1 className="text-xl font-bold text-foreground">Dilshan</h1>
-            <span className="text-xl font-light text-muted-foreground">Thathsara</span>
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
-          </div>
+              <h1 className="text-xl font-bold text-foreground">Dilshan</h1>
+              <span className="text-xl font-light text-muted-foreground">Thathsara</span>
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex hidden items-center space-x-8">
+            {/* Desktop (lg: Socials + ThemeToggle) */}
+            <div className="hidden lg:flex items-center space-x-6">
+              
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4 hover:text-primary transition-colors" />
+              </a>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                <Instagram className="h-4 w-4 hover:text-primary transition-colors" />
+              </a>
+              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+                <Facebook className="h-4 w-4 hover:text-primary transition-colors" />
+              </a>
+              <ThemeToggle />
+            </div>
+
+            {/* Medium screens (md only: show menu items + ThemeToggle) */}
+            <div className="hidden md:flex lg:hidden items-center space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -102,8 +119,8 @@ export function Navigation() {
         )}
       </nav>
 
-      {/* Side Navigation */}
-      <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+      {/* Side Navigation (always on lg+) */}
+      <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
         <div className="flex flex-col space-y-4">
           {navItems.map((item) => {
             const Icon = item.icon
