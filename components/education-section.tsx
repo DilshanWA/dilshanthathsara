@@ -65,12 +65,6 @@ const qualifications = [
     status: "current",
   },
   {
-    title: "Fullstack Development Certificate",
-    subtitle: "DP Education",
-    description: "Completed - 2021",
-    status: "completed",
-  },
-  {
     title: "Advanced Level (A/L)",
     subtitle: "Walasmulla National School",
     description: "Completed - 2018-2020",
@@ -80,26 +74,12 @@ const qualifications = [
 
 const achievements = [
   {
-    title: "Academic Excellence",
-    subtitle: "Mathematics, Physics & IT",
-    description: "Distinction Level Performance",
-  },
-  {
-    title: "Professional Development",
-    subtitle: "Full-Stack Development",
-    description: "Industry-Ready Skills",
-  },
-  {
-    title: "Continuous Learning",
-    subtitle: "Software Engineering",
-    description: "Advanced Technical Knowledge",
-  },
-  {
-    title: "Technical Expertise",
-    subtitle: "Enterprise Solutions",
-    description: "Real-World Applications",
+    title: "Coming Soon",
+    subtitle: "Stay Tuned",
+    description: "Achievements will be added here soon.",
   },
 ]
+
 
 const certifications = [
   {
@@ -126,31 +106,16 @@ const certifications = [
 
 const experience = [
   {
-    title: "Academic Projects",
-    subtitle: "University Coursework",
-    description: "Multiple Software Development Projects",
-  },
-  {
-    title: "Coding Competitions",
-    subtitle: "Tech Communities",
-    description: "Problem Solving & Algorithm Design",
-  },
-  {
-    title: "Self-Directed Learning",
-    subtitle: "Continuous Education",
-    description: "Modern Web Technologies",
-  },
-  {
-    title: "Collaborative Work",
-    subtitle: "Team Projects",
-    description: "Group Development & Version Control",
+    title: "Coming Soon",
+    subtitle: "To Be Updated",
+    description: "Experience details will be added here soon.",
   },
 ]
 
 export function EducationSection() {
   return (
     <section id="education" className="min-h-auto bg-black-to-br text-foreground py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto mt-10">
+      <div className="max-w-6xl mx-auto mt-10">
         <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold  text-balance">Education</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance"></p>
@@ -183,7 +148,7 @@ export function EducationSection() {
                   value="qualifications"
                   className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground"
                 >
-                  Qualifications
+                  Academic Journey
                 </TabsTrigger>
                 <TabsTrigger
                   value="achievements"

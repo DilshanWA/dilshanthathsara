@@ -177,7 +177,7 @@ export function HeroSection() {
       className="min-h-screen flex items-center relative overflow-hidden bg-black-to-br from-background via-muted to-secondary"
     >
       <FloatingTechIcons/>
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           {/* Left Side - Terminal/Code Section */}
           <div className="space-y-8 text-center lg:text-left">

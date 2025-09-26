@@ -72,7 +72,7 @@ export function SkillsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black text-foreground  font-[family-name:var(--font-montserrat)]">
-            <h2 className="text-3xl sm:text-4xl font-bold  text-balance">Skills & Technologies</h2>
+            Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Technologies I work with to build innovative solutions
