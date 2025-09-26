@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X, Home, User, Code, GraduationCap, Briefcase, Mail } from "lucide-react"
-import { Github, Instagram, Facebook } from "lucide-react"
+import { Github, Instagram, Facebook, Linkedin} from "lucide-react"
 
 const navItems = [
   { id: "home", label: "Home", icon: Home },
@@ -68,7 +68,7 @@ export function Navigation() {
                 <Instagram className="h-4 w-4 hover:text-primary transition-colors" />
               </a>
               <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
-                <Facebook className="h-4 w-4 hover:text-primary transition-colors" />
+                <Linkedin className="h-4 w-4 hover:text-primary transition-colors" />
               </a>
               <ThemeToggle />
             </div>

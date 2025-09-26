@@ -71,9 +71,7 @@ export function SkillsSection() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-black text-foreground  font-[family-name:var(--font-montserrat)]">
-            Skills & Technologies
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold  text-balance">Skills & Technologies</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Technologies I work with to build innovative solutions
           </p>
@@ -85,7 +83,7 @@ export function SkillsSection() {
               key={index}
               className="bg-card/30 backdrop-blur-sm border-border/50 hover:bg-card/50 transition-all duration-300 group"
             >
-              <div className="p-6 flex items-center justify-between">
+              <div className="p-6 py-0 flex items-center justify-between">
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {category.title}
