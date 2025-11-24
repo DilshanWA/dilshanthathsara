@@ -9,13 +9,13 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Invoice & Quotation Generation System",
     description:
-      "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
+      "A full-stack web application that enables businesses to create, manage, and track invoices and quotations seamlessly. Features role-based access control with super admin and user roles, real-time data syncing with Firebase, and secure authentication.",
     image: "/modern-ecommerce-interface.png",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    github: "https://github.com/dilshan-madusanka/ecommerce-platform",
-    live: "https://ecommerce-demo.vercel.app",
+    technologies: ["React", "Node.js", "Firebase", "Firebase Auth", "Tailwind CSS"],
+    github: "https://github.com/DilshanWA/QuantifyPro.git",
+    live: "-",
     featured: true,
   },
   {
