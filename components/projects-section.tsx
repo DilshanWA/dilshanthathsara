@@ -12,7 +12,7 @@ const projects = [
     title: "Invoice & Quotation Generation System",
     description:
       "A full-stack web application that enables businesses to create, manage, and track invoices and quotations seamlessly. Features role-based access control with super admin and user roles, real-time data syncing with Firebase, and secure authentication.",
-    image: "/modern-ecommerce-interface.png",
+    image: "/project-image.jpeg",
     technologies: ["React", "Node.js", "Firebase", "Firebase Auth", "Tailwind CSS"],
     github: "https://github.com/DilshanWA/QuantifyPro.git",
     live: "-",
@@ -20,39 +20,6 @@ const projects = [
   },
   {
     id: 2,
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "/task-management-dashboard.png",
-    technologies: ["Next.js", "TypeScript", "Prisma", "Socket.io", "PostgreSQL"],
-    github: "https://github.com/dilshan-madusanka/task-manager",
-    live: "https://taskmanager-demo.vercel.app",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Weather Forecast App",
-    description:
-      "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics using modern APIs.",
-    image: "/weather-app-interface.png",
-    technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
-    github: "https://github.com/dilshan-madusanka/weather-app",
-    live: "https://weather-forecast-demo.vercel.app",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Social Media Dashboard",
-    description:
-      "A comprehensive social media management dashboard with analytics, post scheduling, and multi-platform integration capabilities.",
-    image: "/social-media-dashboard.png",
-    technologies: ["Vue.js", "Express.js", "Redis", "Social APIs"],
-    github: "https://github.com/dilshan-madusanka/social-dashboard",
-    live: "https://social-dashboard-demo.vercel.app",
-    featured: false,
-  },
-  {
-    id: 5,
     title: "Learning Management System",
     description:
       "An educational platform with course management, student progress tracking, and interactive learning modules for online education.",
