@@ -20,13 +20,13 @@ const projects = [
   },
   {
     id: 2,
-    title: "Learning Management System",
+    title: "Image Background Remover App",
     description:
-      "An educational platform with course management, student progress tracking, and interactive learning modules for online education.",
+      "A simple full-stack web application to remove image backgrounds using AI. This project was developed by Dilshan using Next.js (TypeScript) for the frontend and Python (FastAPI) for the backend, with the help of the rembg library for background removal.",
     image: "/learning-management-system.png",
-    technologies: ["Next.js", "Supabase", "Stripe", "Video.js"],
+    technologies: ["Next.js", "TypeScript", "Axios", "Tailwind CSS", "Python", "FastAPI", "rembg"],
     github: "https://github.com/dilshan-madusanka/lms-platform",
-    live: "https://lms-demo.vercel.app",
+    live: -",
     featured: false,
   },
 ]
