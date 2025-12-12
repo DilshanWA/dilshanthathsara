@@ -15,17 +15,7 @@ const education = [
 const certifications = [
   {
     title: "AWS Certified Developer - Associate",
-    issuer: "Amazon Web Services",
-    date: "2024",
-  },
-  {
-    title: "Meta Front-End Developer Certificate",
-    issuer: "Meta",
-    date: "2023",
-  },
-  {
-    title: "Google Cloud Associate Cloud Engineer",
-    issuer: "Google Cloud",
+    issuer: "University of Moratuwa",
     date: "2023",
   },
 ]
