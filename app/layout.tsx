@@ -1,58 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Suspense } from "react"
 import "./globals.css"
 
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
+
 export const metadata: Metadata = {
-  title: "Dilshan Thathsara Madusanka - Portfolio",
-  description: "Software Engineering Student Portfolio - Showcasing projects, skills, and academic achievements",
-  applicationName: "Dilshan Thathsara Madusanka Portfolio",
-  authors: [{ name: "Dilshan Thathsara Madusanka", url: "https://dilshanthathsara.vercel.app" }],
-  icons:{
-    icon: "/favicon.ico",
-  },
-  keywords: [
-    "Dilshan",
-    "Madusanka",
-    "Dilshan Madusanka",
-    "Portfolio",
-    "Software Engineering",
-    "Student",
-    "Projects",
-    "Skills",
-    "Education",
-    "GitHub",
-    "LinkedIn",
-    "Resume",
-  ],
-  creator: "Dilshan Thathsara Madusanka",
-  openGraph: {
-    title: "Dilshan Thathsara Madusanka - Portfolio",
-    description: "Software Engineering Student Portfolio - Showcasing projects, skills, and academic achievements",
-    url: "https://dilshanthathsara.vercel.app",
-    siteName: "Dilshan Thathsara Madusanka Portfolio",
-    images: [
+  title: "Software Engineer Portfolio",
+  description:
+    "Portfolio website of a passionate software engineering undergraduate showcasing projects, skills, and experience",
+  generator: "v0.app",
+  icons: {
+    icon: [
       {
-        url: "https://dilshanthathsara.vercel.app/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Dilshan Thathsara Madusanka Portfolio",
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
       },
     ],
-    locale: "en_US",
-    type: "website",
+    apple: "/apple-icon.png",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dilshan Thathsara Madusanka - Portfolio",
-    description: "Software Engineering Student Portfolio - Showcasing projects, skills, and academic achievements",
-    images: ["https://dilshanthathsara.vercel.app/og-image.png"],
-    creator: "@dilshanthathsara",
-  },  
 }
 
 export default function RootLayout({
@@ -61,13 +37,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={null}>
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
-        </Suspense>
+    <html lang="en">
+      <body className={`font-sans antialiased`}>
+        {children}
         <Analytics />
       </body>
     </html>
