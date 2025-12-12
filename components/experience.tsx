@@ -13,30 +13,6 @@ const experiences = [
       "Participated in agile development and code reviews",
     ],
   },
-  {
-    role: "Teaching Assistant",
-    company: "University Computer Science Department",
-    period: "2023 - Present",
-    description:
-      "Assisted professors in teaching introductory programming courses. Conducted lab sessions, graded assignments, and provided one-on-one tutoring to students.",
-    achievements: [
-      "Mentored 50+ students in programming fundamentals",
-      "Created supplementary learning materials",
-      "Held weekly office hours for student support",
-    ],
-  },
-  {
-    role: "Freelance Web Developer",
-    company: "Self-Employed",
-    period: "2022 - 2023",
-    description:
-      "Designed and developed custom websites for small businesses and individual clients. Managed entire project lifecycle from requirements gathering to deployment.",
-    achievements: [
-      "Delivered 10+ successful projects",
-      "Maintained 100% client satisfaction rate",
-      "Built responsive, SEO-optimized websites",
-    ],
-  },
 ]
 
 export function Experience() {
