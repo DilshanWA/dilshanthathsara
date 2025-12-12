@@ -23,24 +23,6 @@ const projects = [
     github: "#",
     demo: "#",
   },
-  {
-    title: "AI Chat Assistant",
-    description:
-      "An intelligent chatbot using natural language processing to provide automated customer support. Integrates with multiple APIs and learns from user interactions.",
-    tags: ["Python", "TensorFlow", "FastAPI", "React"],
-    image: "/ai-chatbot-interface.png",
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Portfolio Analytics Dashboard",
-    description:
-      "A comprehensive analytics dashboard for tracking portfolio performance with interactive charts, real-time data visualization, and detailed reporting capabilities.",
-    tags: ["Next.js", "D3.js", "PostgreSQL", "TailwindCSS"],
-    image: "/analytics-dashboard.png",
-    github: "#",
-    demo: "#",
-  },
 ]
 
 export function Projects() {
